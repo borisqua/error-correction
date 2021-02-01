@@ -1,0 +1,1 @@
+I want this text will be readable after transmission, so I'll use error protection.

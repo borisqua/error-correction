@@ -44,7 +44,7 @@ application {
 
     // Define the main class for the application.
     // mainModule = 'nlptools' // if application is modular
-    mainClass = 'triplets.App'
+    mainClass = 'triplets.TripletsCode'
 }
 
 java {
@@ -75,7 +75,7 @@ run {
 
 jar {
     manifest {
-        attributes("Main-Class": "triplets.App")
+        attributes("Main-Class": "triplets.TripletsCode")
     }
 }
 
