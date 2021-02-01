@@ -62,6 +62,12 @@
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$/app/src/main/java/hamming/code" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/hamming/code" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -129,6 +135,7 @@
       <updated>1612175937886</updated>
       <workItem from="1612175939055" duration="65000" />
       <workItem from="1612176151611" duration="601000" />
+      <workItem from="1612195159458" duration="2030000" />
     </task>
     <servers />
   </component>

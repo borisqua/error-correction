@@ -50,7 +50,6 @@ public class HammingCode {
             switch (command) {
                 case "encode":
                     doConversion
-//            .apply(HammingErrorCorrector::encode)
                         .apply(HammingCode::encode)
                         .accept("send.txt", "encoded.txt");
                     break;
