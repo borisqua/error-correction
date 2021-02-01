@@ -1,5 +1,7 @@
-## Transmission errors correction
+## Triplets with parity
 
-I created this two applications with educational purposes. The target is to illustrate modern methods of protection data against distortion during transmission. One of the basic techniques of data error protection is adding redundant control information to the data.
+In this app we are modeling the transmission of a text file with some random distortion during the process.
 
-In the beginning, we use primitive toy approach: doubling every bits and adding the parity bit for every such pair. After that we consider the real one method (one of the most popular these days): the Hamming code.
+To protect the information, we duplicate each bit and add to each such a pair the control parity bit.
+
+With this code, we check and repair errors if they present after the transmission simulation. 
