@@ -35,12 +35,10 @@ gitadd-commit-push.cmd
 .sts4-cache
 
 ### IntelliJ IDEA ###
-/.idea/
-.idea/*.*
+.idea/
 *.iws
 *.iml
 *.ipr
-!.idea/compiler.xml
 
 ### GRADLE ###
 #.gradle/
