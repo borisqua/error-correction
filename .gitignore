@@ -41,6 +41,6 @@ gitadd-commit-push.cmd
 *.ipr
 
 ### GRADLE ###
-#.gradle/
+.gradle/
 #gradle/
 #gradlew*
