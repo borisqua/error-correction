@@ -68,6 +68,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -140,6 +141,7 @@
       <workItem from="1612197738558" duration="335000" />
       <workItem from="1612199095745" duration="10000" />
       <workItem from="1612199119253" duration="158000" />
+      <workItem from="1612253590769" duration="350000" />
     </task>
     <servers />
   </component>
