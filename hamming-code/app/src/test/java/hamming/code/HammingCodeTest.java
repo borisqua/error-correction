@@ -9,6 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class HammingCodeTest {
     @Test void appHasAGreeting() {
         HammingCode classUnderTest = new HammingCode();
-        assertNotNull(classUnderTest, "app should have a greeting");
+        assertNotNull(classUnderTest, "app shouldn't be null");
     }
 }

@@ -6,17 +6,17 @@ package triplets;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class TripletsCode {
     
     private static final Random rnd = new Random(System.currentTimeMillis() % 1223);
-
+    
     private static final Scanner scanner = new Scanner(System.in);
     
     private static final Function<Function<byte[], byte[]>, BiConsumer<String, String>>
@@ -33,13 +33,13 @@ public class TripletsCode {
 //    String command = scanner.next();
         List<String> processCommands = List.of("encode", "send", "decode");
         
-            System.out.println();
-            System.out.println("\noriginal text to send: \n");
-            System.out.println(new String(Files.readAllBytes(Path.of("send.txt"))));
-            System.out.println();
-
+        System.out.println();
+        System.out.println("\noriginal text to send: \n");
+        System.out.println(new String(Files.readAllBytes(Path.of("send.txt"))));
+        System.out.println();
+        
         for (String command : processCommands) {
-            
+    
             System.out.print("Next operation: "); // to use with Scanner
             System.out.println(command);
             System.out.println("Press enter to proceed");
@@ -176,7 +176,7 @@ public class TripletsCode {
         
         System.out.println("correcting using parity in bit triplets");
         System.out.println();
-
+        
         for (int b = 0; b < bytes.length; b++) {
             
             int parity = 0;

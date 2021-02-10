@@ -6,9 +6,9 @@ package hamming.code;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
@@ -48,7 +48,7 @@ public class HammingCode {
         System.out.println();
         
         for (String command : processCommands) {
-            
+    
             System.out.print("Next operation: "); // to use with Scanner
             System.out.println(command);
             System.out.println("Press enter to proceed");
