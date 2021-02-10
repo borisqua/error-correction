@@ -1,4 +1,4 @@
-## Transmission errors correction
+# Transmission errors correction
 
 I created these two applications with educational purposes. 
 The target is to illustrate classic methods of protection data against distortion during transmission. 
@@ -10,3 +10,19 @@ After that, having the general understanding of error-protecting principles,
 one can look at the "hamming-code" app: 
 the simple realisation of the one from the real practice method of error protection: 
 the Hamming code.
+
+## Build and run
+
+Required JDK 14 installed.
+
+If the JDK is ready, run the command line from the root application directory:
+```bash
+./start_app
+```
+or in the Windows command console
+```cmd
+start_app.cmd
+```
+here *file.txt* is the name of the file with a text being analyzed for readability.
+
+
