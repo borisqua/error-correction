@@ -18,7 +18,7 @@ if [ "$choise" == "1" ]; then
     echo
     cd triplets/
     ./gradlew clean build
-    java -jar app/build/libs/app.jar send.txt
+    java -jar app/build/libs/app.jar $1
 exit 0
 fi
 
@@ -35,7 +35,7 @@ if [ "$choise" == "2" ]; then
     echo
     cd hamming-code/
     ./gradlew clean build
-    java -jar app/build/libs/app.jar send.txt
+    java -jar app/build/libs/app.jar $1
 exit 0
 fi
 

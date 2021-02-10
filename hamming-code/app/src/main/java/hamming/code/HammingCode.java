@@ -40,7 +40,9 @@ public class HammingCode {
     public static void main(String[] args) throws IOException {
         
         if (args.length == 0) {
+            System.out.println();
             System.out.println("Please, provide file name as a command line argument");
+            System.out.println();
             return;
         }
     
