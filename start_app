@@ -3,7 +3,7 @@ clear
 echo What app do you want to start ?
 echo 1. Triplets app
 echo 2. Hamming code
-echo Your choise: 
+echo -n "Your choise: "
 read -r
 choise=$REPLY
 
