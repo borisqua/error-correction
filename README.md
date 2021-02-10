@@ -17,8 +17,11 @@ Required JDK 14 installed.
 
 If the JDK is ready, run the command line from the root application directory:
 ```bash
-./start_app
+./start_app in.txt
 ```
 or in the Windows command console
 ```cmd
-start_app.cmd
+start_app.cmd in.txt
+```
+Here *in.txt* is the name of the file with a text being sent.
+You can use your file or "in.txt" from the app root directory.

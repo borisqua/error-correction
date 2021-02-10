@@ -38,13 +38,19 @@ public class HammingCode {
     // anyway fastest in most cases is precalculated parities array -> O(1)
     
     public static void main(String[] args) throws IOException {
-
-//    String command = scanner.next();
+        
+        if (args.length == 0) {
+            System.out.println("Please, provide file name as a command line argument");
+            return;
+        }
+    
+        String fileToSend = args[0];
+        
         List<String> processCommands = List.of("encode", "send", "decode");
 
         System.out.println();
         System.out.println("\noriginal text to send: \n");
-        System.out.println(new String(Files.readAllBytes(Path.of("send.txt"))));
+        System.out.println(new String(Files.readAllBytes(Path.of(fileToSend))));
         System.out.println();
         
         for (String command : processCommands) {
@@ -58,7 +64,7 @@ public class HammingCode {
                 case "encode":
                     doConversion
                         .apply(HammingCode::encode)
-                        .accept("send.txt", "encoded.txt");
+                        .accept(fileToSend, "encoded.txt");
                     break;
                 
                 case "send":
