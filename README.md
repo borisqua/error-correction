@@ -23,5 +23,5 @@ or in the Windows command console
 ```cmd
 start_app.cmd in.txt
 ```
-Here *in.txt* is the name of the file with a text being sent.
-You can use your file or "in.txt" from the app root directory.
+Here *send.txt* is the name of the file with a text being sent.
+You can use your file or "send.txt" from the app root directory.
