@@ -1,46 +1,54 @@
-#build files
-build/
-target/
-out/
+### Hidden ###
+#
+# not for publication yet
+.hidden/
+.todo/
 
-#test/
-
+### Large, misc. & OS specific ###
+#
 #data files
 data_files/
 mnist/
 *.bin
 .bin
 
-# dump/
+### Machine specific and temperary files ###
+# builds, compilations, logs, etc.
+#
+# temps and logs
+dump/
 logs/
-.hidden/
-#.todo/
-src/app/*.html
-!.mvn/wrapper/maven-wrapper.jar
-
-### misc. & OS specific ###
+#
+# OS specific files
 desktop.ini
-gitadd-commit-push.cmd
-
-### Java
+#
+# Builds, compilations, etc.
+build/
+target/
+out/
+src/app/*.html
+#
+# Java
 *.class
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea/
 *.iws
 *.iml
 *.ipr
+!.idea/compiler.xml
 
 ### GRADLE ###
-.gradle/
-#gradle/
-#gradlew*
+# Gradle project specific hash directory
+.gradle/ 
+# Gradle wrapper
+!gradle/
+!gradlew*
+!gradlew.bat*
+
+### Maven ###
+# Maven project specific hash directory
+# Maven wrapper
+!.mvn/wrapper/maven-wrapper.jar
+!mvnw*
+!mvnw.bat*

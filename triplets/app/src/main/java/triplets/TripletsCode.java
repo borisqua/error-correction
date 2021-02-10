@@ -6,6 +6,7 @@ package triplets;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Scanner;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -16,7 +17,7 @@ public class TripletsCode {
     
     private static final Random rnd = new Random(System.currentTimeMillis() % 1223);
 
-//  private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     
     private static final Function<Function<byte[], byte[]>, BiConsumer<String, String>>
         doConversion = conversion -> (inputFile, outputFile) -> {
@@ -27,16 +28,22 @@ public class TripletsCode {
         }
     };
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //    String command = scanner.next();
         List<String> processCommands = List.of("encode", "send", "decode");
         
+            System.out.println();
+            System.out.println("\noriginal text to send: \n");
+            System.out.println(new String(Files.readAllBytes(Path.of("send.txt"))));
+            System.out.println();
+
         for (String command : processCommands) {
             
             System.out.print("Next operation: "); // to use with Scanner
             System.out.println(command);
-            System.out.println();
+            System.out.println("Press enter to proceed");
+            scanner.nextLine();
             
             switch (command) {
                 case "encode":
@@ -62,8 +69,6 @@ public class TripletsCode {
     
     private static byte[] encode(byte[] bytes) { // encode
         
-        System.out.println("original text to send: " + new String(bytes));
-        System.out.println();
         System.out.println("text in hex: " + stringOfBytes(bytes, "hex", " ", 2));
         System.out.println();
         System.out.println("text in bin: " + stringOfBytes(bytes, "bin", " ", 8));
@@ -148,7 +153,7 @@ public class TripletsCode {
         System.out.println();
         System.out.println("in hex: " + stringOfBytes(bytes, "hex", " ", 2));
         System.out.println();
-        System.out.println("text is distorted: " + new String(bytes));
+        System.out.println("text is distorted: \n" + new String(bytes));
         System.out.println();
         return bytes;
         
@@ -159,7 +164,7 @@ public class TripletsCode {
         int[] tripletsOfBytes = new int[(int) Math.ceil((float) bytes.length / 8)];
         byte[] decoded = new byte[(int) Math.ceil((float) bytes.length * 3 / 8)];
         
-        System.out.println("text is distorted after transmission: " + new String(bytes));
+        System.out.println("text is distorted after transmission: \n" + new String(bytes));
         System.out.println();
         System.out.println("in hex: " + stringOfBytes(bytes, "hex", " ", 2));
         System.out.println();
@@ -169,13 +174,16 @@ public class TripletsCode {
         int tripletIndex = 0;
         int inTripletShift = 21; //todo?? can be replaced by (21 - (22 + tripletIndex) % 22) but is it worth it?
         
+        System.out.println("correcting using parity in bit triplets");
+        System.out.println();
+
         for (int b = 0; b < bytes.length; b++) {
             
             int parity = 0;
             int bitShift = 7;
             int bitPosition = 0b1000_0000;
             int brokenBit = -1;
-            for (int pair = 3; pair > 0; pair--) { // 1. is there a broken pair of data bits
+            for (int pair = 3; pair > 0; pair--) { // 1. is there a broken pair of data bits?
                 int bit1 = (bytes[b] & bitPosition) >>> bitShift;
                 bitShift--;
                 bitPosition /= 2;
@@ -231,8 +239,6 @@ public class TripletsCode {
             }
         }
         
-        System.out.println("correcting using Hamming code");
-        System.out.println();
         System.out.println("corrected in bin: " + stringOfBytes(bytes, "bin", " ", 8));
         System.out.println();
         System.out.println("in hex: " + stringOfBytes(bytes, "hex", " ", 2));
@@ -243,9 +249,9 @@ public class TripletsCode {
         System.out.println();
         
         decoded = Arrays.copyOf(decoded, notEmptyCount);
-        System.out.println("removed empty space left after correcting code: " + stringOfBytes(decoded, "hex", " ", 2));
+        System.out.println("removed empty space after correcting code: " + stringOfBytes(decoded, "hex", " ", 2));
         
-        System.out.println("repaired text: " + new String(decoded));
+        System.out.println("\nrepaired text: \n\n" + new String(decoded));
         System.out.println();
         
         return decoded;

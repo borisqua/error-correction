@@ -6,6 +6,7 @@ package hamming.code;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Scanner;
 import java.util.List;
 import java.util.Random;
 import java.util.function.BiConsumer;
@@ -15,7 +16,7 @@ public class HammingCode {
     
     private static final Random rnd = new Random(System.currentTimeMillis() % 1223);
 
-//  private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     
     private static final int[] parityMasks = {
         0x55, // position number's 0th bit set -> 1 11 101 111 ... - 1  3  5  7 ...
@@ -36,16 +37,22 @@ public class HammingCode {
         (byte) (((n * 0x0101010101010101L) & 0x8040201008040201L) % 0x1FF) & 1; // T(4)
     // anyway fastest in most cases is precalculated parities array -> O(1)
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //    String command = scanner.next();
         List<String> processCommands = List.of("encode", "send", "decode");
+
+        System.out.println();
+        System.out.println("\noriginal text to send: \n");
+        System.out.println(new String(Files.readAllBytes(Path.of("send.txt"))));
+        System.out.println();
         
         for (String command : processCommands) {
             
             System.out.print("Next operation: "); // to use with Scanner
             System.out.println(command);
-            System.out.println();
+            System.out.println("Press enter to proceed");
+            scanner.nextLine();
             
             switch (command) {
                 case "encode":
@@ -173,8 +180,6 @@ public class HammingCode {
     
     private static byte[] encode(byte[] bytes) {
         
-        System.out.println("original text to send: " + new String(bytes));
-        System.out.println();
         System.out.println("text in hex: " + stringOfBytes(bytes, "hex", " ", 2));
         System.out.println();
         System.out.println("text in bin: " + stringOfBytes(bytes, "bin", " ", 8));
@@ -255,7 +260,7 @@ public class HammingCode {
 //    decoded = Arrays.copyOf(decoded, notEmptyCount);
 //    System.out.println("removed: " + stringOfBytes(decoded, "hex", " ", 2));
         
-        System.out.println("repaired text: " + new String(decoded));
+        System.out.println("\nrepaired text: \n\n" + new String(decoded));
         System.out.println();
         
         return decoded;
