@@ -22,7 +22,3 @@ If the JDK is ready, run the command line from the root application directory:
 or in the Windows command console
 ```cmd
 start_app.cmd
-```
-here *file.txt* is the name of the file with a text being analyzed for readability.
-
-
