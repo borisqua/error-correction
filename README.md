@@ -8,8 +8,7 @@ As a starter, look at the "triplets" app, here we use a straightforward, naïve 
 
 After that, having the general understanding of error-protecting principles, 
 one can look at the "hamming-code" app: 
-the simple realisation of the one from the real practice method of error protection: 
-the Hamming code.
+the simple realisation of the one from the real practice method of error protection. 
 
 ## Build and run
 
